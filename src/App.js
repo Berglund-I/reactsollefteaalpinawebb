@@ -1,30 +1,24 @@
-import logo from 'react';
+import React from 'react';
+import HeaderElements from './components/HeaderElements'
+import FooterElements from './components/FooterElements'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import HomePage from './pages/HomePage'
+import TrainingPage from './pages/TrainingPage'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="header-container">
-          <img src={process.env.PUBLIC_URL + '/solleftealogo.png'} className="App-logo" alt="logo"/>
-          <h1>
-            Sollefteå alpina
-          </h1>
-        </div>
-      </header>
-
-      <nav className="mainnav">
-        <ul>
-          <li><a href="startsida">Hem</a></li>
-          <li><a href="traning">Träning</a></li>
-          <li><a href="competing">Tävling</a></li>
-          <li><a href="member">Bli medlem</a></li>
-          <li><a href="traning">Om föreningen</a></li>
-          <li><a href="traning">Kontakta oss</a></li>
-        </ul>
-      </nav>
-    </div>
-  );
+    return (
+        <Router>
+            <HeaderElements/>
+            <Routes>
+                <Route exact path="/startsida" element={<HomePage/>} />
+                <Route path="/training" element={<TrainingPage/>} />
+            </Routes>
+            <FooterElements/>
+        </Router>
+    );
 }
 
 export default App;
+
+
