@@ -14,7 +14,7 @@ function HeaderElements(){
                     <li><a href="competing">Tävling</a></li>
                     <li><a href="member">Bli medlem</a></li>
                     <li><a href="traning">Om föreningen</a></li>
-                    <li><a href="traning">Kontakta oss</a></li>
+                    <li><a href="contactUs">Kontakta oss</a></li>
                 </ul>
             </nav>
 
