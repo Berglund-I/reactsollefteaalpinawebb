@@ -9,9 +9,11 @@ import BeMemeberPage from './pages/BeMemberPage'
 import ContactUsPage from './pages/ContactUsPage'
 import NewsComponent from "./components/NewsComponent";
 
+
 function App() {
     return (
         <Router>
+            <NewsComponent/>
             <HeaderElements/>
 
             <Routes>
