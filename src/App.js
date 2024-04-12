@@ -8,14 +8,12 @@ import TrainingPage from './pages/TrainingPage'
 import CompetitionPage from './pages/CompetitionPage'
 import BeMemeberPage from './pages/BeMemberPage'
 import ContactUsPage from './pages/ContactUsPage'
-import NewsComponent from "./components/NewsComponent";
 
 
 function App() {
     return (
         <Router>
             <HeaderElements/>
-            <NewsComponent/>
             <Routes>
                 <Route exact path="/startsida" element={<HomePage/>} />
                 <Route path="/training" element={<TrainingPage/>} />
