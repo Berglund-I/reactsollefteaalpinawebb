@@ -3,8 +3,8 @@ import React, {useState} from "react";
 function ContactUsPage(){
 
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
+        from: "",
+        subject:"",
         message: ""
     });
 
@@ -38,33 +38,29 @@ function ContactUsPage(){
         }
     };
     return (
-
-
         <div className="contactform">
             <h2 className="h2contact">Kontakta Sollefteå alpin klubb:</h2>
             <p className="pcontact">Ställ era frågor nedan, vi svarar så fort vi kan.</p>
-            
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="name" className="labelcontact">Namn:</label>
-                    <div>
-                        <input type="text" name="name" id="name" className="inputcontact"/>
-                    </div>
 
-                    <label htmlFor="email" className="labelcontact">Email:</label>
-                    <div>
-                        <input type="email" name="email" id="email" className="inputcontact"/>
-                    </div>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="from" className="labelcontact">Email:</label>
+                <div>
+                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}/>
+                </div>
 
-                    <label htmlFor="message" className="labelcontact">Meddelande:</label>
-                    <div>
-                        <textarea name="message" cols="30" rows="10" className="inputcontact"></textarea>
-                    </div>
-                    <input type="submit" value="Skicka" name="send" className="btncontactform"/>
-                </form>
+                <label htmlFor="subject" className="labelcontact">Ämne:</label>
+                <div>
+                    <input type="text" name="subject" id="subject" className="inputcontact" onChange={handleChange}/>
+                </div>
+
+                <label htmlFor="message" className="labelcontact">Meddelande:</label>
+                <div>
+                    <textarea name="message" cols="30" rows="10" className="inputcontact" onChange={handleChange}></textarea>
+                </div>
+                <input type="submit" value="Skicka" name="send" className="btncontactform"/>
+            </form>
         </div>
-
-
-)
+    )
 }
 
 export default ContactUsPage;
