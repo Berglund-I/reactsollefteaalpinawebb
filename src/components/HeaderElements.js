@@ -2,7 +2,7 @@ import React from "react";
 
 function HeaderElements(){
     return (
-        <div>
+        <div className="mainnavdiv">
             <header className="App-header">
                 <img src={process.env.PUBLIC_URL + '/solleftealogo.png'} className="solleftealogo" alt="logo"/>
             </header>
