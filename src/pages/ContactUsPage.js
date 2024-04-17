@@ -3,8 +3,8 @@ import React, {useState} from "react";
 function ContactUsPage(){
 
     const [formData, setFormData] = useState({
+        name:"",
         from: "",
-        subject:"",
         message: ""
     });
 
@@ -43,19 +43,20 @@ function ContactUsPage(){
             <p className="pcontact">Ställ era frågor nedan, vi svarar så fort vi kan.</p>
 
             <form onSubmit={handleSubmit}>
+                <label htmlFor="name" className="labelcontact">Namn:</label>
+                <div>
+                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange}/>
+                </div>
+
                 <label htmlFor="from" className="labelcontact">Email:</label>
                 <div>
                     <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}/>
                 </div>
 
-                <label htmlFor="subject" className="labelcontact">Ämne:</label>
-                <div>
-                    <input type="text" name="subject" id="subject" className="inputcontact" onChange={handleChange}/>
-                </div>
-
                 <label htmlFor="message" className="labelcontact">Meddelande:</label>
                 <div>
-                    <textarea name="message" cols="30" rows="10" className="inputcontact" onChange={handleChange}></textarea>
+                    <textarea name="message" cols="30" rows="10" className="inputcontact"
+                              onChange={handleChange}></textarea>
                 </div>
                 <input type="submit" value="Skicka" name="send" className="btncontactform"/>
             </form>
