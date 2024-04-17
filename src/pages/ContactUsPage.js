@@ -19,7 +19,7 @@ function ContactUsPage(){
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8080/api/mail', {
+            const response = await fetch('http://localhost:8080/api/email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
