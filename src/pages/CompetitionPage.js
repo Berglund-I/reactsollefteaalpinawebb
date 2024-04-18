@@ -1,6 +1,8 @@
 import React from "react";
+import CompetitionCalendarComponent from "../components/CompetitionCalendarComponent";
 
 function CompetitionPage(){
+
     return (
         <div className="App">
             <section className="training-page">
@@ -11,6 +13,7 @@ function CompetitionPage(){
                 <article className="competition-home">
                     <h2 className="competition-home-title">Hemmatävlingar</h2>
                     <p className="competition-home-text">Här kan du se tävlingar som vi i Sollefteå alpina klubb är med och arrangera</p>
+                    <CompetitionCalendarComponent />
                 </article>
 
                 <article className="competition-calender">
