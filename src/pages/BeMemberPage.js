@@ -1,27 +1,78 @@
-import React from "react";
+import React, {useState} from "react";
 
-function BeMemberPage(){
+function BeMemberPage(){    const [formData, setFormData] = useState({
+    name:"",
+    from: "",
+    phoneNumber:"",
+    birthDate:"",
+    message: ""
+});
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:8080/api/member/email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Något gick fel.');
+            }
+
+            alert('E-postmeddelandet har skickats!');
+        } catch (error) {
+            console.error('Fel:', error);
+            alert('Något gick fel. Försök igen senare.');
+        }
+    };
+
     return (
 
-        <div className="memberform">
-            <h2 className="h2member">Bli medlem:</h2>
-            <p className="pmember">Fyll i uppgifterna nedan och betala in till bangiro för att bli medlem.</p>
-            <form action="https://formsubmit.co/02ebkar@gmail.com" method="POST">
+        <div className="contactform">
+            <h2 className="h2contact">Bli medlem i Sollefteå Alpina klubb:</h2>
+            <p className="pcontact">Fyll i kontaktuppgifter nedan och betala in till bankgiro</p>
+
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="name" className="labelcontact">Namn:</label>
                 <div>
-                    <input type="text" name="name" id="name" className="inputcontact"/>
+                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange}/>
                 </div>
 
-                <label htmlFor="email" className="labelmember">Email:</label>
+                <label htmlFor="from" className="labelcontact">Email:</label>
                 <div>
-                    <input type="email" name="email" id="email" className="inputmember"/>
+                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}/>
                 </div>
 
-                <label htmlFor="message" className="labelmember">Meddelande:</label>
+                <label htmlFor="phoneNumber" className="labelcontact">Telefon:</label>
                 <div>
-                    <textarea name="message" cols="30" rows="10" className="inputmember"></textarea>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" className="inputcontact"
+                           onChange={handleChange}/>
                 </div>
-                <input type="submit" value="Skicka" className="btnmemberform"/>
+
+                <label htmlFor="birthDate" className="labelcontact">Födelsedatum:</label>
+                <div>
+                    <input type="date" name="birthDate" id="birthDate" className="inputcontact"
+                           onChange={handleChange}/>
+                </div>
+
+                <label htmlFor="message" className="labelcontact">Övrigt:</label>
+                <div>
+                    <textarea name="message" cols="30" rows="10" className="inputcontact"
+                              onChange={handleChange}></textarea>
+                </div>
+                <input type="submit" value="Skicka" name="send" className="btncontactform" onChange={handleChange}/>
             </form>
         </div>
 
