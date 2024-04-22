@@ -1,5 +1,4 @@
 import React from "react";
-import NewsComponent from "../components/NewsComponent";
 
 function HomePage(){
     return (
@@ -9,6 +8,9 @@ function HomePage(){
                 <h1>
                     Välkommen till Sollefteå alpina
                 </h1>
+            </aside>
+
+            <aside className="fb-container">
                 <div className="fb-page"
                      data-href="https://www.facebook.com/p/Sollefte%C3%A5-Alpina-Klubb-100063470472728/"
                      data-tabs="timeline" data-width="600" data-height="500" data-small-header="false"
@@ -18,15 +20,15 @@ function HomePage(){
                         href="https://www.facebook.com/profile.php?id=100063470472728">Sollefteå Alpina Klubb</a>
                     </blockquote>
                 </div>
-
             </aside>
+
+
 
             <aside className="rightsidebar">
                 <h2>
                     Bli medlem
                 </h2>
             </aside>
-
 
         </div>
     )
