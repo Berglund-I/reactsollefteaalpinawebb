@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function HomePage(){
     return (
@@ -23,11 +24,9 @@ function HomePage(){
             </aside>
 
 
-
             <aside className="rightsidebar">
-                <h2>
-                    Bli medlem
-                </h2>
+                {/* eslint-disable-next-line react/jsx-no-undef */}
+                <Link to="/member" className="button-to-become-member">Bli medlem</Link>
             </aside>
 
         </div>

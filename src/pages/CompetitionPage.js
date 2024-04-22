@@ -19,7 +19,6 @@ function CompetitionPage(){
                 <article className="competition-calender">
                     <h2 className="competition-calender-title">Tävlingskalendern</h2>
                     <p className="competition-calender-text">Här kan du se och anmäla dig till kommande tävlingar</p>
-
                     <a href="https://ta.skidor.com/EventCalendar.aspx?orgid=80" className="button-to-competitionCalendar">Klicka här för att gå till Tävlingskalendern</a>
                 </article>
 
