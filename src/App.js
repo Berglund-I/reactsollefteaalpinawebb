@@ -15,7 +15,8 @@ function App() {
         <Router>
             <HeaderElements/>
             <Routes>
-                <Route exact path="/startsida" element={<HomePage/>} />
+                <Route exact path="/" element={<HomePage/>} />
+                <Route path="/startsida" element={<HomePage/>} />
                 <Route path="/training" element={<TrainingPage/>} />
                 <Route path="/competing" element={<CompetitionPage/>} />
                 <Route path="/member" element={<BeMemeberPage/>} />
