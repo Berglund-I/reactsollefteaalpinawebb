@@ -1,14 +1,14 @@
   header {
 
-    background-image: url('../public/sollefteahallsta.png');
+    background-image: url('../public/headerSAK.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 600px;
+    height: 200px;
     padding: 30px;
 
     .solleftealogo{
-      width: 10%;
+      width: 16%;
     }
   }
 
