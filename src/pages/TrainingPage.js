@@ -26,7 +26,7 @@ function TrainingPage(){
                     <h2 className="training-title">Tränings uppdatering</h2>
                     <p className="training-update"> Här kommer information om något händer</p>
                     <div className="fb-page" data-href="https://www.facebook.com/p/Sollefte%C3%A5-Alpina-Klubb-100063470472728/"
-                         data-tabs="timeline" data-width="600" data-height="500" data-small-header="false"
+                         data-tabs="timeline" data-width="100" data-height="150" data-small-header="false"
                          data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
                         <blockquote cite="https://www.facebook.com/profile.php?id=100063470472728"
                                     className="fb-xfbml-parse-ignore"><a
