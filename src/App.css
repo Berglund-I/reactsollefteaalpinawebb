@@ -56,41 +56,55 @@
   }
 
   .fb-container{
+    background-color: red;
     width: 75%;
+    height: 600px;
   }
 
   .fb-page{
-    width: 100%;
+    background-color: blue;
+    height: 500px;
   }
 
-  .rightsidebar{
+
+
+  .rightsidebar {
     position: absolute;
     right: 0;
     width: 25%;
-    top: 450px;
+    top: 422.5px;
     height: 100%;
-
-    .button-to-become-member{
-      padding: 10px;
-      background-color: lightgray;
-      border: 1px solid black;
-    }
-
-    h2{
-      padding-left: 10px;
-    }
-
+    border: 1px solid black;
+    border-top: none;
+    border-bottom: none;
 
   }
 
+  .button-to-become-member {
+    display: block;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin: 15px;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .sponsor-text{
+    margin-left: 15px;
+  }
+
+
   footer{
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: blue;
+    height: 80px;
+    background-color: green;
     text-align: center;
+    padding-top: 20px;
     color: black;
+    margin-top: 50px;
   }
 
 

@@ -19,9 +19,9 @@ function AboutUsPage(){
                 <article className="information-as-member">
                     <h2 className="about-us-title">Information om att vara medlem</h2>
                     <p className="information-text"> Klicka på knappen blir medlem för att veta mer angående kostnader och vad du ska göra: </p>
-                    <Link to="/member" className="button-to-become-member">Bli medlem</Link>
+                    <Link to="/member" className="button-to-become-member-about-us">Bli medlem</Link>
                     <p className="information-text"> Se information angående vilka träningsgrupper vi har: </p>
-                    <Link to="/training" className="button-to-become-member">Se träningsgrupper</Link>
+                    <Link to="/training" className="button-to-become-member-about-us">Se träningsgrupper</Link>
 
                 </article>
 
