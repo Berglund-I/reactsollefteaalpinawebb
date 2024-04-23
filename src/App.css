@@ -180,6 +180,8 @@ header {
 
   /*Träningssidan*/
   .training-page {
+    display: flex;
+    justify-content: space-between;
 
     /*CSS kod till träningstider på träningssidan*/
     .training-date {
@@ -189,12 +191,13 @@ header {
       padding: 20px;
       background-color: #f5f5f5;
       border-radius: 5px;
+      flex: 1;
+      margin-right: 10px;
 
       .training-title {
         grid-column: span 3;
         text-align: center;
         margin-bottom: 20px;
-        font-size: 2.5em;
       }
 
       .older-training-group,
@@ -209,30 +212,26 @@ header {
         border-radius: 5px;
         padding: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        font-size: 1em;
       }
 
     }
 
     /*CSS kod till träningsgrupper på träningssidan*/
-
     .training-groups {
       padding: 20px;
       background-color: #f5f5f5;
       border-radius: 5px;
+      flex: 1;
+      margin-left: 10px;
 
       .training-title {
         text-align: center;
-        color: #333;
         margin-bottom: 20px;
-        font-size: 2.5em;
       }
 
       .training-groups-title {
         font-weight: bold;
-        color: #333;
         margin-bottom: 10px;
-        font-size: 1.5em;
       }
 
       .training-groups p {
@@ -241,13 +240,57 @@ header {
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        font-size: 1em;
 
       }
     }
   }
+/*----------------------------------------------------------------------------------------------------------------------*/
+  /*Tävlingsssidan*/
+  .competition-page{
+    display: flex;
+    justify-content: space-between;
 
+    /* Hemmatävlingar */
+    .competition-home {
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      flex: 1;
+      margin-right: 10px;
+    }
 
+    .competition-home-title {
+      margin-bottom: 10px;
+    }
+
+    /* Tävlingskalendern */
+    .competition-calender {
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    .competition-calender-title {
+      margin-bottom: 10px;
+    }
+
+    .button-to-competitionCalendar {
+      display: inline-block;
+      background-color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-to-competitionCalendar:hover {
+      background-color: #0056b3;
+    }
+  }
 
 
 
