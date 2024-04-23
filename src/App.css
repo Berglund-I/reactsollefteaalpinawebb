@@ -134,6 +134,27 @@
   }
 
 
+  /* Ändrar titelns egenskaper på popupen */
+  .swal2-title {
+
+  }
+
+  /* Ändrar textens egenskaper på popupen*/
+  .swal2-content {
+
+  }
+
+  /* Ändrar egenskaper på knappen om mailet skickas iväg */
+  .swal2-confirm {
+
+  }
+
+  /* Ändrar egenskeper på kanppen om mailet inte skickas */
+  .swal2-cancel {
+
+  }
+
+
 
 
 

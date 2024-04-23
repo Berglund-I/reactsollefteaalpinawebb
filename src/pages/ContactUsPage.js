@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Swal from 'sweetalert2';
 
 function ContactUsPage(){
 
@@ -31,10 +32,24 @@ function ContactUsPage(){
                 throw new Error('Något gick fel.');
             }
 
-            alert('E-postmeddelandet har skickats!');
+            Swal.fire(
+                'Meddelandet har skickats.',
+                'Tack för att du hör av dig. Vi återkommer med svar så fort vi kan!'
+            );
+
+            setFormData({
+                name: "",
+                from: "",
+                message: ""
+            });
+
         } catch (error) {
             console.error('Fel:', error);
-            alert('Något gick fel. Försök igen senare.');
+
+            Swal.fire(
+                'Å nej, något gick fel.',
+                'Testa att skicka ett mail till solleftea.alpina@gmail.com istälet'
+            );
         }
     };
     return (
@@ -45,18 +60,18 @@ function ContactUsPage(){
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name" className="labelcontact">Namn:</label>
                 <div>
-                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange}/>
+                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name}/>
                 </div>
 
                 <label htmlFor="from" className="labelcontact">Email:</label>
                 <div>
-                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}/>
+                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from}/>
                 </div>
 
                 <label htmlFor="message" className="labelcontact">Meddelande:</label>
                 <div>
                     <textarea name="message" cols="30" rows="10" className="inputcontact"
-                              onChange={handleChange}></textarea>
+                              onChange={handleChange} value={formData.message}></textarea>
                 </div>
                 <input type="submit" value="Skicka" name="send" className="btncontactform"/>
             </form>
