@@ -1,12 +1,21 @@
 import React, {useState} from "react";
 import Swal from 'sweetalert2';
 
+function calculateAge(personalNumber) {
+    const birthYear = parseInt(personalNumber.substr(0, 4));
+    const currentYear = new Date().getFullYear();
+    return currentYear - birthYear;
+}
+
 function BeMemberPage(){    const [formData, setFormData] = useState({
     name:"",
     from: "",
     phoneNumber:"",
-    birthDate:"",
-    message: ""
+    personalNumber:"",
+    message: "",
+    parentName: "",
+    parentEmail: "",
+    parentPhoneNumber:""
 });
 
     const handleChange = (e) => {
@@ -41,8 +50,11 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                 name:"",
                 from: "",
                 phoneNumber:"",
-                birthDate:"",
-                message: ""
+                personalNumber:"",
+                message: "",
+                parentName: "",
+                parentEmail: "",
+                parentPhoneNumber:""
             });
 
         } catch (error) {
@@ -61,27 +73,52 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
             <p className="pcontact">Fyll i kontaktuppgifter nedan och betala in till bankgiro</p>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name" className="labelcontact">Namn:</label>
+                <label htmlFor="name" className="labelcontact">Namn: *</label>
                 <div>
-                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name}/>
+                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange}
+                           value={formData.name} required/>
                 </div>
 
-                <label htmlFor="from" className="labelcontact">Email:</label>
+                <label htmlFor="personalNumber" className="labelcontact">Personal Number YYYYMMDD-XXXX: *</label>
                 <div>
-                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from}/>
+                    <input type="text" name="personalNumber" id="personalNumber" className="inputcontact"
+                           onChange={handleChange} pattern="\d{8}-\d{4}" value={formData.personalNumber} required/>
                 </div>
 
-                <label htmlFor="phoneNumber" className="labelcontact">Telefon:</label>
+                {calculateAge(formData.personalNumber) < 18 && (
+                    <>
+                        <label htmlFor="parentName" className="labelcontact">Förälders namn: *</label>
+                        <div>
+                            <input type="text" name="parentName" id="parentName" className="inputcontact"
+                                   onChange={handleChange} required/>
+                        </div>
+
+                        <label htmlFor="parentEmail" className="labelcontact">Förälders Email: *</label>
+                        <div>
+                            <input type="email" name="parentEmail" id="parentEmail" className="inputcontact"
+                                   onChange={handleChange} required/>
+                        </div>
+
+                        <label htmlFor="parentPhoneNumber" className="labelcontact">Förälders telefonnummer: *</label>
+                        <div>
+                            <input type="tel" name="parentPhoneNumber" id="parentPhoneNumber" className="inputcontact"
+                                   onChange={handleChange} required/>
+                        </div>
+                    </>
+                )}
+
+                <label htmlFor="from" className="labelcontact">Email: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</label>
+                <div>
+                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}
+                           value={formData.from} required={calculateAge(formData.personalNumber) >= 18}/>
+                </div>
+
+                <label htmlFor="phoneNumber" className="labelcontact">Telefon: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</label>
                 <div>
                     <input type="tel" name="phoneNumber" id="phoneNumber" className="inputcontact"
-                           onChange={handleChange} value={formData.phoneNumber}/>
+                           onChange={handleChange} value={formData.phoneNumber} required={calculateAge(formData.personalNumber) >= 18}/>
                 </div>
 
-                <label htmlFor="birthDate" className="labelcontact">Födelsedatum:</label>
-                <div>
-                    <input type="date" name="birthDate" id="birthDate" className="inputcontact"
-                           onChange={handleChange} value={formData.birthDate}/>
-                </div>
 
                 <label htmlFor="message" className="labelcontact">Övrigt:</label>
                 <div>
