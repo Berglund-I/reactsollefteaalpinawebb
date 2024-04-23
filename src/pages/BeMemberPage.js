@@ -79,7 +79,7 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                            value={formData.name} required/>
                 </div>
 
-                <label htmlFor="personalNumber" className="labelcontact">Personal Number YYYYMMDD-XXXX: *</label>
+                <label htmlFor="personalNumber" className="labelcontact">Personnummer (YYYYMMDD-XXXX): *</label>
                 <div>
                     <input type="text" name="personalNumber" id="personalNumber" className="inputcontact"
                            onChange={handleChange} pattern="\d{8}-\d{4}" value={formData.personalNumber} required/>
