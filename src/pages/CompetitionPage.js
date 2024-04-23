@@ -5,10 +5,7 @@ function CompetitionPage(){
 
     return (
         <div className="App">
-            <section className="training-page">
-                <h1>
-                    Tävling
-                </h1>
+            <section className="competition-page">
 
                 <article className="competition-home">
                     <h2 className="competition-home-title">Hemmatävlingar</h2>
