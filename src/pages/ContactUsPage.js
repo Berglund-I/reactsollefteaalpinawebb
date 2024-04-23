@@ -53,28 +53,33 @@ function ContactUsPage(){
         }
     };
     return (
-        <div className="contactform">
-            <h2 className="h2contact">Kontakta Sollefteå alpin klubb:</h2>
-            <p className="pcontact">Ställ era frågor nedan, vi svarar så fort vi kan.</p>
-
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name" className="labelcontact">Namn: *</label>
-                <div>
-                    <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name} required/>
+        <div className="App">
+            <section className="form-page">
+                <div className="contactform">
+                    <h2>Kontakta Sollefteå Alpina klubb</h2>
+                    <h3>Ställ era frågor nedan, vi svarar så fort vi kan.</h3>
+        
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="name" className="labelcontact">Namn: *</label>
+                        <div>
+                            <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name} required/>
+                        </div>
+        
+                        <label htmlFor="from" className="labelcontact">Email: *</label>
+                        <div>
+                            <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from} required/>
+                        </div>
+        
+                        <label htmlFor="message" className="labelcontact">Meddelande: *</label>
+                        <div>
+                            <textarea name="message" cols="30" rows="10" className="inputcontact"
+                                      onChange={handleChange} value={formData.message} required></textarea>
+                        </div>
+                        <input type="submit" value="Skicka" name="send" className="btncontactform"/>
+                    </form>
                 </div>
+            </section>
 
-                <label htmlFor="from" className="labelcontact">Email: *</label>
-                <div>
-                    <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from} required/>
-                </div>
-
-                <label htmlFor="message" className="labelcontact">Meddelande: *</label>
-                <div>
-                    <textarea name="message" cols="30" rows="10" className="inputcontact"
-                              onChange={handleChange} value={formData.message} required></textarea>
-                </div>
-                <input type="submit" value="Skicka" name="send" className="btncontactform"/>
-            </form>
         </div>
     )
 }
