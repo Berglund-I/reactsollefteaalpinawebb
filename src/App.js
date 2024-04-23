@@ -8,6 +8,7 @@ import TrainingPage from './pages/TrainingPage'
 import CompetitionPage from './pages/CompetitionPage'
 import BeMemeberPage from './pages/BeMemberPage'
 import ContactUsPage from './pages/ContactUsPage'
+import AboutUsPage from "./pages/AboutUsPage";
 
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
                 <Route path="/training" element={<TrainingPage/>} />
                 <Route path="/competing" element={<CompetitionPage/>} />
                 <Route path="/member" element={<BeMemeberPage/>} />
+                <Route path="/aboutus" element={<AboutUsPage/>} />
                 <Route path="/contactUs" element={<ContactUsPage/>} />
             </Routes>
-            <FooterElements/>
+
         </Router>
     );
 }
