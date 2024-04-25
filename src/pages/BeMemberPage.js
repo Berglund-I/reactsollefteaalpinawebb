@@ -70,8 +70,8 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
         <div className="App">
             <section className="form-page">
                 <div className="contactform">
-                    <h2 className="h2contact">Bli medlem i Sollefteå Alpina klubb:</h2>
-                    <p className="pcontact">Fyll i kontaktuppgifter nedan och betala in till bankgiro</p>
+                    <h2>Bli medlem i Sollefteå Alpina klubb:</h2>
+                    <h3>Fyll i kontaktuppgifter nedan och betala in till bankgiro</h3>
 
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="name" className="labelcontact">Namn: *</label>
