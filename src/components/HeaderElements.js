@@ -4,7 +4,9 @@ function HeaderElements(){
     return (
         <div className="mainnavdiv">
             <header className="App-header">
-                <img src={process.env.PUBLIC_URL + '/logosollefteaalpinaklubb.png'} className="solleftealogo" alt="logo"/>
+                <a href={"startsida"}>
+                    <img src={process.env.PUBLIC_URL + '/logosollefteaalpinaklubb.png'} className="solleftealogo" alt="logo"/>
+                </a>
             </header>
 
             <nav className="mainnav">
