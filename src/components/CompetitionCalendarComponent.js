@@ -39,7 +39,9 @@ class CompetitionCalendarComponent extends React.Component {
                                 <tr key={competitionCalendar.id}>
                                     <td>{competitionCalendar.event}</td>
                                     <td>{competitionCalendar.date}</td>
-                                    <td> <button onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan</button> </td>
+                                    <td>
+                                        <button onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan <i className="bi bi-box-arrow-up-right"></i></button>
+                                    </td>
                                 </tr>
                         )}
                         </tbody>
