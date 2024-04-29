@@ -13,6 +13,9 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
     from: "",
     phoneNumber:"",
     personalNumber:"",
+    homeAdress:"",
+    village:"",
+    villageNumber:"",
     message: "",
     parentName: "",
     parentEmail: "",
@@ -48,7 +51,7 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                 e.target.style.borderColor = '';
             }
         } else if (e.target.name === 'phoneNumber' || e.target.name === 'parentPhoneNumber') {
-            const pattern = /^[0-9]{10}$/;
+            const pattern = /^[\d\s-]{10,15}$/;
             if (!pattern.test(e.target.value)) {
                 e.target.style.borderColor = 'red';
             } else {
@@ -83,6 +86,9 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                 from: "",
                 phoneNumber:"",
                 personalNumber:"",
+                village:"",
+                villageNumber:"",
+                message: "",
                 message: "",
                 parentName: "",
                 parentEmail: "",
@@ -129,11 +135,28 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                                 <input type="email" name="parentEmail" id="parentEmail" className="inputcontact"
                                        onChange={handleChange} required onInput={checkInputFormat}/>
 
-                                <label htmlFor="parentPhoneNumber" className="labelcontact">Förälders telefonnummer: *</label>
-                                <input type="tel" name="parentPhoneNumber" id="parentPhoneNumber" className="inputcontact"
+                                <label htmlFor="parentPhoneNumber" className="labelcontact">Förälders telefonnummer:
+                                    *</label>
+                                <input type="tel" name="parentPhoneNumber" id="parentPhoneNumber"
+                                       className="inputcontact"
                                        onChange={handleChange} required onInput={checkInputFormat}/>
                             </div>
                         )}
+
+                        <div className="input-row">
+                            <label htmlFor="homeAdress" className="labelcontact">Adress: *</label>
+                            <input type="text" name="homeAdress" id="homeAdress" className="inputcontact"
+                                   onChange={handleChange}
+                                   value={formData.name} required/>
+
+                            <label htmlFor="village" className="labelcontact">Stad: *</label>
+                            <input type="text" name="village" id="village" className="inputcontact"
+                                   onChange={handleChange} value={formData.village}/>
+
+                            <label htmlFor="villageNumber" className="labelcontact">Postnummer: *</label>
+                            <input type="text" name="villageNumber" id="villageNumber" className="inputcontact"
+                                   onChange={handleChange} value={formData.villageNumber}/>
+                        </div>
 
                         <div className="input-row">
                             <label htmlFor="from"

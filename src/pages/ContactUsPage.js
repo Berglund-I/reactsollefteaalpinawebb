@@ -60,16 +60,16 @@ function ContactUsPage(){
                     <h3>Ställ era frågor nedan, vi svarar så fort vi kan.</h3>
         
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="name" className="labelcontact">Namn: *</label>
-                        <div>
+                        <div className="input-row">
+
+                            <label htmlFor="name" className="labelcontact">Namn: *</label>
                             <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name} required/>
-                        </div>
-        
-                        <label htmlFor="from" className="labelcontact">Email: *</label>
-                        <div>
+
+                            <label htmlFor="from" className="labelcontact">Email: *</label>
                             <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from} required/>
+
                         </div>
-        
+
                         <label htmlFor="message" className="labelcontact">Meddelande: *</label>
                         <div>
                             <textarea name="message" cols="30" rows="10" className="inputcontact"
