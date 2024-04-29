@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 function HomePage(){
+    const [feed, setFeed] = useState([]);
+
+    useEffect(() => {
+        // Fetch the Facebook feed from your backend when the component is mounted
+        fetch('http://localhost:8080/api/feed')
+            .then(response => response.json())
+            .then(data => setFeed(data)); // Set the feed state to the data
+    }, []);
+
     return (
         <div className="App">
 
@@ -12,17 +21,12 @@ function HomePage(){
             </aside>
 
             <aside className="fb-container">
-                <div className="fb-page"
-                     data-href="https://www.facebook.com/p/Sollefte%C3%A5-Alpina-Klubb-100063470472728/"
-                     data-tabs="timeline" data-small-header="false"
-                     data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-width="100%">
-                    <blockquote cite="https://www.facebook.com/profile.php?id=100063470472728"
-                                className="fb-xfbml-parse-ignore"><a
-                        href="https://www.facebook.com/profile.php?id=100063470472728">Sollefteå Alpina Klubb</a>
-                    </blockquote>
-                </div>
+                {feed.map(post => (
+                    <div key={post.id}>
+                        <p>{post.message}</p>
+                    </div>
+                ))}
             </aside>
-
 
             <aside className="rightsidebar">
                 <Link to="/member" className="button-to-become-member">Bli medlem</Link>
