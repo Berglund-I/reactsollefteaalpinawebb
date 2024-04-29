@@ -17,6 +17,11 @@ class CompetitionCalendarComponent extends React.Component {
         })
     }
 
+    handleButtonClick = (eventID) => {
+        const url = `https://ta.skidor.com/EventDetails.aspx?EventID=${eventID}&orgid=8658`;
+        window.location.href = url;
+    }
+
     render (){
         const { competitionCalendar, loading } = this.state;
 
@@ -34,6 +39,7 @@ class CompetitionCalendarComponent extends React.Component {
                                 <tr key={competitionCalendar.id}>
                                     <td>{competitionCalendar.event}</td>
                                     <td>{competitionCalendar.date}</td>
+                                    <td> <button onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan</button> </td>
                                 </tr>
                         )}
                         </tbody>
