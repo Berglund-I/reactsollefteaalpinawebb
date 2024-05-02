@@ -1,55 +1,63 @@
 import React from 'react';
 import FacebookService from "../services/FacebookService";
-import facebookService from "../services/FacebookService";
 
 class FacebookComponent extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            competitionCalendar: [],
-            loading: true // Lägg till en loading-flagga för att indikera att data hämtas
+            facebook: [],
+            loading: true, // Lägg till en loading-flagga för att indikera att data hämtas
+            postsToShow: 5
         }
+        this.showMorePosts = this.showMorePosts.bind(this);
     }
 
     componentDidMount() {
-        facebookService.getCompetitionCalendar().then((res)=>{
-            this.setState({competitionCalendar: res.data, loading: false});
+        FacebookService.getFacebookFeed().then((res)=>{
+            this.setState({facebook: res.data, loading: false}, () => {
+                console.log(this.state);
+            });
         })
     }
 
-    handleButtonClick = (eventID) => {
-        const url = `https://ta.skidor.com/EventDetails.aspx?EventID=${eventID}&orgid=8658`;
-        window.location.href = url;
+    showMorePosts() {
+        this.setState(prevState => ({
+            postsToShow: prevState.postsToShow + 10
+        }));
     }
 
     render (){
-        const { competitionCalendar, loading } = this.state;
+        const { facebook, loading, postsToShow } = this.state;
 
         return (
-            <div>
+            <div className="fb-container">
                 {loading ? (
-                    <p>Hämtar tävlingskalender...</p>
-                ) : competitionCalendar.length === 0 ? (
-                    <p>Sollefteå alpina är inte med och arrangerar någon tävling för tillfället.</p>
+                    <p>Hämtar nyheter från facebook...</p>
+                ) : facebook.length === 0 ? (
+                    <p>Hittade ingen information</p>
                 ) : (
-                    <table className="competitionCalendar-table">
-                        <tbody>
-                        {competitionCalendar.map(
-                            competitionCalendar =>
-                                <tr key={competitionCalendar.id}>
-                                    <td>{competitionCalendar.event}</td>
-                                    <td>{competitionCalendar.date}</td>
-                                    <td>
-                                        <button onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan <i className="bi bi-box-arrow-up-right"></i></button>
+                    <>
+                        <table className="facebook-table">
+                            <tbody>
+                            {facebook.slice(0, postsToShow).map((post, index) => (
+                                <tr key={post.idFacebook}>
+                                    <td className="post">
+                                        <h3>{post.createdTime}</h3>
+                                        <p>{post.message}</p>
                                     </td>
                                 </tr>
-                        )}
-                        </tbody>
-                    </table>
+                            ))}
+                            </tbody>
+                        </table>
+                        {postsToShow < facebook.length &&
+                            <button className="show-more-button" onClick={this.showMorePosts}>Visa fler inlägg</button>
+                        }
+                    </>
                 )}
             </div>
         )
     }
 }
-export default CompetitionCalendarComponent;
+
+export default FacebookComponent;

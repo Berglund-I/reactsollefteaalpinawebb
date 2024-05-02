@@ -4,7 +4,7 @@ const FACEBOOK_REST_API_URL = 'http://localhost:8080/api/facebook-feed';
 
 class FacebookService {
 
-    getCompetitionCalendar() {
+    getFacebookFeed() {
         return axios.get(FACEBOOK_REST_API_URL)
     }
 }
