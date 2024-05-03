@@ -8,20 +8,54 @@ function AboutUsPage(){
 
                 <article className="information-about-us">
                     <h2 className="about-us-title">Information om Sollefteå alpina klubb</h2>
-                    <p className="information-text"> Hej! Jag heter Ida Berglund och jag har varit aktiv i klubben under hela min uppväxt. Just nu håller jag och min klasskompis på med vårt B-examensarbete. Vi studerar andra året på Informatik med inriktning systemutveckling och har därför valt att rusta upp Sollefteå Alpinas hemsida. Av den anledningen välkomnar vi gärna in förslag och idéer till den framtida hemsidan som ni känner saknas eller finns behov av. Kommentera era åsikter både bra som dåliga eller skicka iväg ett meddelande till mig antingen här på facebook till Ida Berglund eller på min mejl berglund.ida@outlook.com . Vi tacksamma för allt vi får in, så att vi kan utveckla den bästa hemsidan till er. </p>
+                    <p className="information-text">Sollefteå alpina klubb är en alpin tävlingsklubb som drivs ideellt. Hemmabacken Hallstaberget drivs av Sollefteå kommun. </p>
                 </article>
 
                 <article className="information-the-board">
                     <h2 className="about-us-title"> Styrelsen i klubben</h2>
-                    <p className="information-text"> Ordförande: Roger Svensson Vice Ordförande: Mats Lidström Kassör: Simon Duvemo Ledamot: Marie Nauclér Ledamot: Lotta Lundin Ledamot: Magnus Berglund </p>
+                    <ul className="information-text">
+                        <li>
+                            Ordförande: Roger Svensson
+                        </li>
+                        <li>
+                            Vice Ordförande: Mats Lidström
+                        </li>
+                        <li>
+                            Kassör: Simon Duvemo
+                        </li>
+                        <li>
+                            Ledamot: Marie Nauclér, Lotta Lundin och Magnus Berglund
+                        </li>
+                    </ul>
                 </article>
 
                 <article className="information-as-member">
-                    <h2 className="about-us-title">Information om att vara medlem</h2>
-                    <p className="information-text"> Klicka på knappen blir medlem för att veta mer angående kostnader och vad du ska göra: </p>
-                    <Link to="/member" className="button-to-become-member-about-us">Bli medlem</Link>
-                    <p className="information-text"> Se information angående vilka träningsgrupper vi har: </p>
-                    <Link to="/training" className="button-to-become-member-about-us">Se träningsgrupper</Link>
+                <h2 className="about-us-title">Information om att vara medlem</h2>
+                    <p className="information-text"> Klicka på knappen för att gå vidare till att bli medlem: </p>
+
+
+                    <p className="information-text"> Medlems- och träningsavgifter betalar du årligen till Sollefteå
+                        alpina klubbens SAK:s bankgiro konto. </p>
+                    <h3 className="about-us-title">SAK:s bankgiro:</h3>
+                    <ul className="information-price-text">
+                        <li className="information-text">5312-8369</li>
+                        <li className="information-text">Vid inbetalning ange namn, personuppgifter, epostadress och telefonnummer här: <Link to="/Bli medlem" className="button-to-become-member-about-us">Bli medlem</Link> </li>
+                    </ul>
+
+                    <h3 className="about-us-title">Medelmsavgifter:</h3>
+                    <ul className="information-price-text">
+                        <li>300:- Enskild person</li>
+                        <li>350:- Hela familjen som bor på samma adress</li>
+                    </ul>
+                    <h3 className="about-us-title">Träningsavgifter:</h3>
+                    <ul className="information-price-text">
+                        <li>200:- U10</li>
+                        <li>300:- U12</li>
+                        <li>400:- U14 och äldre</li>
+                    </ul>
+                    <Link to="/Träning" className="button-to-become-member-about-us">Se vilken träningsgrupp du
+                        tillhör</Link>
+
 
                 </article>
 

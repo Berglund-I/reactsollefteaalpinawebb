@@ -109,7 +109,7 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
             <section className="form-page">
                 <div className="contactform">
                     <h2>Bli medlem i Sollefteå Alpina klubb:</h2>
-                    <h3>Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du <Link to="/aboutus">här</Link>.</h3>
+                    <h3>Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du <Link to="/Om föreningen">här</Link>.</h3>
                     <h3>Var medveten om att genom att skicka detta formulär samtycker du till att dina personuppgifter behandlas enligt Sollefteå Alpinas integritetspolicy.</h3>
 
                     <form onSubmit={handleSubmit}>
