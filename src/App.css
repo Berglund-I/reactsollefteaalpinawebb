@@ -26,11 +26,6 @@ p{
   font-family: "Roboto";
 }
 
-li{
-  font-size: 1.5em;
-  font-family: "Roboto";
-}
-
 header {
 
     background-image: url('../public/headerSAK.png');
@@ -384,6 +379,18 @@ header {
   }
 
   /* Om föreningen */
+.information-text dt {
+  font-weight: bold;
+  float: left;
+  width: 200px;
+  font-size: 1.5em
+}
+
+.information-text dd {
+  margin-left: 225px; /* This should be the width of dt plus some extra space */
+  font-size: 1.5em
+}
+
 .information-about-us,
 .information-the-board,
 .information-as-member {
@@ -395,6 +402,10 @@ header {
 
 .information-price-text {
   list-style-type: none;
+}
+
+.information-price-text li {
+  font-size: 1.5em; /* Adjust this value to your liking */
 }
 
 .information-price-text li::before {
