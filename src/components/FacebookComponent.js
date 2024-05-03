@@ -1,5 +1,7 @@
 import React from 'react';
 import FacebookService from "../services/FacebookService";
+import {faSpinner} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class FacebookComponent extends React.Component {
 
@@ -33,7 +35,7 @@ class FacebookComponent extends React.Component {
         return (
             <div className="fb-container">
                 {loading ? (
-                    <p>Hämtar nyheter från facebook...</p>
+                    <p>Hämtar nyheter från facebook <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}} /></p>
                 ) : facebook.length === 0 ? (
                     <p>Hittade ingen information</p>
                 ) : (

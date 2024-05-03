@@ -13,24 +13,20 @@ function AboutUsPage(){
 
                 <article className="information-the-board">
                     <h2 className="about-us-title"> Styrelsen i klubben</h2>
-                    <ul className="information-text">
-                        <li>
-                            Ordförande: Roger Svensson
-                        </li>
-                        <li>
-                            Vice Ordförande: Mats Lidström
-                        </li>
-                        <li>
-                            Kassör: Simon Duvemo
-                        </li>
-                        <li>
-                            Ledamot: Marie Nauclér, Lotta Lundin och Magnus Berglund
-                        </li>
-                    </ul>
+                    <dl className="information-text">
+                        <dt>Ordförande:</dt>
+                        <dd>Roger Svensson</dd>
+                        <dt>Vice Ordförande:</dt>
+                        <dd>Mats Lidström</dd>
+                        <dt>Kassör:</dt>
+                        <dd>Simon Duvemo</dd>
+                        <dt>Ledamot:</dt>
+                        <dd>Marie Nauclér, Lotta Lundin och Magnus Berglund</dd>
+                    </dl>
                 </article>
 
                 <article className="information-as-member">
-                <h2 className="about-us-title">Information om att vara medlem</h2>
+                    <h2 className="about-us-title">Information om att vara medlem</h2>
                     <p className="information-text"> Klicka på knappen för att gå vidare till att bli medlem: </p>
 
 

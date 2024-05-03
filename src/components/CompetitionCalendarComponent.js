@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import CompetitionCalendarService from "../services/CompetitionCalendarService";
 
 class CompetitionCalendarComponent extends React.Component {
@@ -28,7 +30,10 @@ class CompetitionCalendarComponent extends React.Component {
         return (
             <div>
                 {loading ? (
-                    <p>Hämtar tävlingskalender...</p>
+                    <div>
+                        <p>Hämtar tävlingskalender <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}} /> </p>
+
+                    </div>
                 ) : competitionCalendar.length === 0 ? (
                     <p>Sollefteå alpina är inte med och arrangerar någon tävling för tillfället.</p>
                 ) : (
