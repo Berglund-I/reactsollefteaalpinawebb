@@ -61,13 +61,14 @@ function ContactUsPage(){
         
                     <form onSubmit={handleSubmit}>
                         <div className="input-row">
-
+                            <div className="items-align">
                             <label htmlFor="name" className="labelcontact">Namn: *</label>
                             <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange} value={formData.name} required/>
-
+                            </div>
+                            <div className="items-align">
                             <label htmlFor="from" className="labelcontact">Email: *</label>
                             <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange} value={formData.from} required/>
-
+                            </div>
                         </div>
 
                         <label htmlFor="message" className="labelcontact">Meddelande: *</label>
