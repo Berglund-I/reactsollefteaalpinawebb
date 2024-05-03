@@ -26,6 +26,11 @@ p{
   font-family: "Roboto";
 }
 
+li{
+  font-size: 1.5em;
+  font-family: "Roboto";
+}
+
 header {
 
     background-image: url('../public/headerSAK.png');
@@ -374,6 +379,24 @@ header {
   }
 
   /* Om föreningen */
+.information-about-us,
+.information-the-board,
+.information-as-member {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.information-price-text {
+  list-style-type: none;
+}
+
+.information-price-text li::before {
+  content: "• ";
+  color: #044899; /* or whatever color you prefer */
+}
+
   .button-to-become-member-about-us{
     padding: 10px;
     border: 1px solid black;

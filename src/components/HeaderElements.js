@@ -5,18 +5,18 @@ function HeaderElements(){
         <div className="mainnavdiv">
             <header className="App-header">
                 <a href={"startsida"}>
-                    <img src={process.env.PUBLIC_URL + '/logosollefteaalpinaklubb.png'} className="solleftealogo" alt="logo"/>
+                    <img src={process.env.PUBLIC_URL + 'logosollefteaalpinaklubb.png'} className="solleftealogo" alt="logo"/>
                 </a>
             </header>
 
             <nav className="mainnav">
                 <ul>
-                    <li><a href="startsida">Hem</a></li>
-                    <li><a href="training">Träning</a></li>
-                    <li><a href="competing">Tävling</a></li>
-                    <li><a href="member">Bli medlem</a></li>
-                    <li><a href="aboutus">Om föreningen</a></li>
-                    <li><a href="contactUs">Kontakta oss</a></li>
+                    <li><a href="Hem">Hem</a></li>
+                    <li><a href="Träning">Träning</a></li>
+                    <li><a href="Tävling">Tävling</a></li>
+                    <li><a href="Bli medlem">Bli medlem</a></li>
+                    <li><a href="Om föreningen">Om föreningen</a></li>
+                    <li><a href="Kontakta oss">Kontakta oss</a></li>
                 </ul>
             </nav>
 

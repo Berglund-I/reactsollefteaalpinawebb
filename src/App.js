@@ -17,12 +17,12 @@ function App() {
             <HeaderElements/>
             <Routes>
                 <Route exact path="/" element={<HomePage/>} />
-                <Route path="/startsida" element={<HomePage/>} />
-                <Route path="/training" element={<TrainingPage/>} />
-                <Route path="/competing" element={<CompetitionPage/>} />
-                <Route path="/member" element={<BeMemeberPage/>} />
-                <Route path="/aboutus" element={<AboutUsPage/>} />
-                <Route path="/contactUs" element={<ContactUsPage/>} />
+                <Route path="/Hem" element={<HomePage/>} />
+                <Route path="/Träning" element={<TrainingPage/>} />
+                <Route path="/Tävling" element={<CompetitionPage/>} />
+                <Route path="/Bli medlem" element={<BeMemeberPage/>} />
+                <Route path="/Om föreningen" element={<AboutUsPage/>} />
+                <Route path="/Kontakta oss" element={<ContactUsPage/>} />
             </Routes>
             <FooterElements/>
         </Router>
