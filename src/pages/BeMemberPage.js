@@ -108,69 +108,86 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
             <section className="form-page">
                 <div className="contactform">
                     <h2>Bli medlem i Sollefteå Alpina klubb:</h2>
-                    <h3>Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du <Link to="/Om föreningen">här</Link>.</h3>
-                    <h3>Var medveten om att genom att skicka detta formulär samtycker du till att dina personuppgifter behandlas enligt Sollefteå Alpinas integritetspolicy.</h3>
+                    <h3>Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du <Link to="/Om föreningen">här</Link>. Var medveten om att genom att skicka detta formulär samtycker du till att dina personuppgifter behandlas enligt Sollefteå Alpinas integritetspolicy.</h3>
 
                     <form onSubmit={handleSubmit}>
                         <div className="input-row">
-                            <label htmlFor="name" className="labelcontact">Namn: *</label>
-                            <input type="text" name="name" id="name" className="inputcontact" onChange={handleChange}
-                                   value={formData.name} required onInput={checkInputFormat}/>
+                            <div className="items-align">
+                                <label htmlFor="name" className="labelcontact">Namn: * </label>
+                                <input type="text" name="name" id="name" className="inputcontact"
+                                       onChange={handleChange}
+                                       value={formData.name} required onInput={checkInputFormat}/>
+                            </div>
 
-                            <label htmlFor="personalNumber" className="labelcontact">Personnummer: *</label>
-                            <input type="text" name="personalNumber" id="personalNumber" className="inputcontact"
-                                   onChange={handleChange} pattern="\d{8}-\d{4}" value={formData.personalNumber}
-                                   required placeholder="YYYYMMDD-XXXX"
-                                   onInput={checkInputFormat}/>
+                            <div className="items-align">
+                                <label htmlFor="personalNumber" className="labelcontact">Personnummer: *</label>
+                                <input type="text" name="personalNumber" id="personalNumber" className="inputcontact"
+                                       onChange={handleChange} pattern="\d{8}-\d{4}" value={formData.personalNumber}
+                                       required placeholder="YYYYMMDD-XXXX"
+                                       onInput={checkInputFormat}/>
+                            </div>
+
                         </div>
 
                         {calculateAge(formData.personalNumber) < 18 && (
                             <div className="input-row">
+                                <div className="items-align">
                                 <label htmlFor="parentName" className="labelcontact">Förälders namn: *</label>
                                 <input type="text" name="parentName" id="parentName" className="inputcontact"
                                        onChange={handleChange} required onInput={checkInputFormat}/>
-
+                                </div>
+                                <div className="items-align">
                                 <label htmlFor="parentEmail" className="labelcontact">Förälders Email: *</label>
                                 <input type="email" name="parentEmail" id="parentEmail" className="inputcontact"
                                        onChange={handleChange} required onInput={checkInputFormat}/>
-
-                                <label htmlFor="parentPhoneNumber" className="labelcontact">Förälders telefonnummer:
+                                </div>
+                                <div className="items-align">
+                                <label htmlFor="parentPhoneNumber" className="labelcontact">Förälders telefon:
                                     *</label>
                                 <input type="tel" name="parentPhoneNumber" id="parentPhoneNumber"
                                        className="inputcontact"
                                        onChange={handleChange} required onInput={checkInputFormat}/>
+                                </div>
                             </div>
                         )}
 
                         <div className="input-row">
+                            <div className="items-align">
                             <label htmlFor="homeAdress" className="labelcontact">Adress: *</label>
                             <input type="text" name="homeAdress" id="homeAdress" className="inputcontact"
                                    onChange={handleChange}
                                    value={formData.name} required/>
-
+                            </div>
+                            <div className="items-align">
                             <label htmlFor="village" className="labelcontact">Stad: *</label>
                             <input type="text" name="village" id="village" className="inputcontact"
                                    onChange={handleChange} value={formData.village}/>
-
+                            </div>
+                            <div className="items-align">
                             <label htmlFor="villageNumber" className="labelcontact">Postnummer: *</label>
                             <input type="text" name="villageNumber" id="villageNumber" className="inputcontact"
                                    onChange={handleChange} value={formData.villageNumber}/>
+                            </div>
+
                         </div>
 
                         <div className="input-row">
+                            <div className="items-align">
                             <label htmlFor="from"
                                    className="labelcontact">Email: {calculateAge(formData.personalNumber) >= 18 &&
                                 <span>*</span>}</label>
                             <input type="email" name="from" id="from" className="inputcontact" onChange={handleChange}
                                    value={formData.from} required={calculateAge(formData.personalNumber) >= 18}
                                    onInput={checkInputFormat}/>
-
+                            </div>
+                            <div className="items-align">
                             <label htmlFor="phoneNumber"
                                    className="labelcontact">Telefon: {calculateAge(formData.personalNumber) >= 18 &&
                                 <span>*</span>}</label>
                             <input type="tel" name="phoneNumber" id="phoneNumber" className="inputcontact"
                                    onChange={handleChange} value={formData.phoneNumber}
                                    required={calculateAge(formData.personalNumber) >= 18} onInput={checkInputFormat}/>
+                            </div>
                         </div>
 
 
