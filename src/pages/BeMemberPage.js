@@ -89,7 +89,6 @@ function BeMemberPage(){    const [formData, setFormData] = useState({
                 village:"",
                 villageNumber:"",
                 message: "",
-                message: "",
                 parentName: "",
                 parentEmail: "",
                 parentPhoneNumber:""
