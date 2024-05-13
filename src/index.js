@@ -5,9 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <ThemeProvider theme={theme}>
+        <App />
+    </ThemeProvider>,
   <React.StrictMode>
     <App />
   </React.StrictMode>
