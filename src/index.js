@@ -8,7 +8,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
-
+    mixins: {
+        toolbar: {
+            minHeight: 56,
+            '@media (min-width:0px) and (orientation: landscape)': {
+                minHeight: 48,
+            },
+            '@media (min-width:600px)': {
+                minHeight: 64,
+            },
+        },
+    },
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
