@@ -10,9 +10,9 @@ import BeMemeberPage from './pages/BeMemberPage'
 import ContactUsPage from './pages/ContactUsPage'
 import AboutUsPage from "./pages/AboutUsPage";
 import MainNavComponent from "./components/MainNavComponent";
-import { createMuiTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-export const theme: createMuiTheme = {
+const theme = createTheme({
     palette: {
         mode: 'light',
         primary: {
@@ -31,7 +31,34 @@ export const theme: createMuiTheme = {
             main: '#fdcc12',
         },
     },
-};
+
+    typography: {
+        h1: {
+            fontSize: 60,
+        },
+        h2: {
+            fontSize: '2.5em',
+        },
+        h3: {
+            fontSize: '1.5em',
+        },
+        h4: {
+            fontSize: '1em',
+        },
+        button: {
+            fontSize: '1em',
+        },
+        body1: {
+            fontSize: '1em',
+        },
+    },
+
+    textField:{
+        body1: {
+            fontSize: '10em',
+        },
+    },
+});
 
 function App() {
     return (

@@ -12,28 +12,27 @@ import Box from '@mui/material/Box';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
+        ...theme.typography.h2,
     },
     [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
+        ...theme.typography.h3,
     },
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
+
     },
     '&:last-child td, &:last-child th': {
-        border: 0,
+
     },
 }));
 
 function createData(
-    trainingGroup: string,
-    description: string,
-    trainingDays: string,
-    trainingTimes: string,
+    trainingGroup,
+    description,
+    trainingDays,
+    trainingTimes
 ) {
     return { trainingGroup, description, trainingDays, trainingTimes};
 }
@@ -51,7 +50,7 @@ function MobileLayout({ rows }) {
     return (
         <Box>
             {rows.map((row) => (
-                <Box key={row.trainingGroup} sx={{ marginBottom: 2, padding: 2, backgroundColor: 'action.hover' }}>
+                <Box key={row.trainingGroup} sx={{ marginBottom: 2, padding: 2 }}>
                     <Box>{row.trainingGroup}</Box>
                     <Box>{row.description}</Box>
                     <Box>{row.trainingDays}</Box>
@@ -71,9 +70,9 @@ function TrainingScheduleComponent() {
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell>Träningsgrupp</StyledTableCell>
-                                <StyledTableCell align="right">Beskrivning</StyledTableCell>
-                                <StyledTableCell align="right">Dagar</StyledTableCell>
-                                <StyledTableCell align="right">Tid</StyledTableCell>
+                                <StyledTableCell align="left" >Beskrivning</StyledTableCell>
+                                <StyledTableCell align="left">Dagar</StyledTableCell>
+                                <StyledTableCell align="left">Tid</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -82,9 +81,9 @@ function TrainingScheduleComponent() {
                                     <StyledTableCell component="th" scope="row">
                                         {row.trainingGroup}
                                     </StyledTableCell>
-                                    <StyledTableCell align="right">{row.description}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.trainingDays}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.trainingTimes}</StyledTableCell>
+                                    <StyledTableCell align="left">{row.description}</StyledTableCell>
+                                    <StyledTableCell align="left">{row.trainingDays}</StyledTableCell>
+                                    <StyledTableCell align="left">{row.trainingTimes}</StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>

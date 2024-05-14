@@ -11,11 +11,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
-    color: theme.palette.text.secondary,
     flexGrow: 1,
 }));
 
@@ -139,18 +136,18 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
             <Typography variant="h2" gutterBottom>
                 Bli medlem i Sollefteå Alpina klubb:
             </Typography>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="body1" gutterBottom>
                 Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du här. Var medveten om att genom att skicka detta formulär samtycker du till att dina personuppgifter behandlas enligt Sollefteå Alpinas integritetspolicy.
             </Typography>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Namn:</FormLabel>
+                            <Typography variant="body1" >Namn:</Typography>
                             <TextField id="name" name="name" label="Fyll i ditt namn" variant="outlined" fullWidth onChange={handleChange} value={formData.name} required error={!!formErrors['name']} />
                         </Item>
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Personnummer:</FormLabel>
+                            <Typography variant="body1" >Personnummer:</Typography>
                             <TextField id="personalNumber" name="personalNumber" label="ÅÅÅÅMMDD-XXXX" variant="outlined" fullWidth onChange={handleChange} value={formData.personalNumber} required error={!!formErrors['personalNumber']}/>
                         </Item>
                     </Stack>
@@ -158,15 +155,15 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
                     {calculateAge(formData.personalNumber) < 18 && (
                         <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                             <Item>
-                                <FormLabel sx={{ color: 'black'}}>Förälders namn:</FormLabel>
+                                <Typography variant="body1">Förälders namn:</Typography>
                                 <TextField id="parentName" name="parentName" label="Fyll i förälders namn" variant="outlined" fullWidth onChange={handleChange} value={formData.parentName} required />
                             </Item>
                             <Item>
-                                <FormLabel sx={{ color: 'black'}}>Förälders Email:</FormLabel>
+                                <Typography variant="body1">Förälders Email:</Typography>
                                 <TextField id="parentEmail" name="parentEmail" label="Fyll i förälders email" variant="outlined" fullWidth onChange={handleChange} value={formData.parentEmail} required error={!!formErrors['parentEmail']} />
                             </Item>
                             <Item>
-                                <FormLabel sx={{ color: 'black'}}>Förälders telefon:</FormLabel>
+                                <Typography variant="body1">Förälders telefon:</Typography>
                                 <TextField id="parentPhoneNumber" name="parentPhoneNumber" label="Fyll i förälders telefon" variant="outlined" fullWidth onChange={handleChange} value={formData.parentPhoneNumber} required error={!!formErrors['parentPhoneNumber']}/>
                             </Item>
                         </Stack>
@@ -174,32 +171,32 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
 
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Adress:</FormLabel>
+                            <Typography variant="body1">Adress:</Typography>
                             <TextField id="homeAdress" name="homeAdress" label="Fyll i din adress" variant="outlined" fullWidth onChange={handleChange} value={formData.homeAdress} required />
                         </Item>
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Stad:</FormLabel>
+                            <Typography variant="body1">Stad:</Typography>
                             <TextField id="village" name="village" label="Fyll i din stad" variant="outlined" fullWidth onChange={handleChange} value={formData.village} required/>
                         </Item>
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Postnummer:</FormLabel>
+                            <Typography variant="body1">Postnummer:</Typography>
                             <TextField id="villageNumber" name="villageNumber" label="Fyll i ditt postnummer" variant="outlined" fullWidth onChange={handleChange} value={formData.villageNumber} required/>
                         </Item>
                     </Stack>
 
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Email: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</FormLabel>
+                            <Typography variant="body1">Email: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</Typography>
                             <TextField id="from" name="from" label="Fyll i din email" variant="outlined" fullWidth onChange={handleChange} value={formData.from} required={calculateAge(formData.personalNumber) >= 18} error={!!formErrors['from']}/>
                         </Item>
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Telefon: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</FormLabel>
+                            <Typography variant="body1">Telefon: {calculateAge(formData.personalNumber) >= 18 && <span>*</span>}</Typography>
                             <TextField id="phoneNumber" name="phoneNumber" label="Fyll i ditt telefonnummer" variant="outlined" fullWidth onChange={handleChange} value={formData.phoneNumber} required={calculateAge(formData.personalNumber) >= 18} error={!!formErrors['phoneNumber']} />
                         </Item>
                     </Stack>
 
                     <Item>
-                        <FormLabel sx={{ color: 'black'}}>Om du vill att vi ska veta något mer om dig. Skriv det här:</FormLabel>
+                        <Typography variant="body1">Om du vill att vi ska veta något mer om dig. Skriv det här:</Typography>
                         <TextField
                             id="message"
                             name="message"

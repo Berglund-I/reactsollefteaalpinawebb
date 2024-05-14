@@ -42,19 +42,18 @@ class FacebookComponent extends React.Component {
                 <Grid item xs={12} sm={9}>
                     <div className="fb-container">
                         {loading ? (
-                            <p>Hämtar nyheter från facebook <FontAwesomeIcon icon={faSpinner} spin
-                                                                             style={{color: "#003c99"}}/></p>
+                            <Typography variant="body1">Hämtar nyheter från facebook <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}}/></Typography>
                         ) : facebook.length === 0 ? (
-                            <p>Hittade ingen information</p>
+                            <Typography variant="body1">Hittade ingen information</Typography>
                         ) : (
                             <>
                                 {facebook.slice(0, postsToShow).map((post, index) => (
                                     <Card key={post.idFacebook}>
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h4" component="div">
                                                 {post.createdTime}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
+                                            <Typography variant="body1">
                                                 {post.message}
                                             </Typography>
                                         </CardContent>

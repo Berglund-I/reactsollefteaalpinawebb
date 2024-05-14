@@ -10,11 +10,8 @@ import { styled } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
-    color: theme.palette.text.secondary,
     flexGrow: 1,
 }));
 
@@ -74,23 +71,23 @@ export default function FlexboxGapStack() {
             <Typography variant="h2" gutterBottom>
                 Kontakta Sollefteå Alpina!
             </Typography>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="body1" gutterBottom>
                 Ställ era frågor nedan, vi svarar så fort vi kan.
             </Typography>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Namn:</FormLabel>
+                            <Typography variant="body1">Namn:</Typography>
                             <TextField id="name" name="name" label="Fyll i ditt namn" variant="outlined" fullWidth onChange={handleChange} value={formData.name} />
                         </Item>
                         <Item>
-                            <FormLabel sx={{ color: 'black'}}>Email:</FormLabel>
+                            <Typography variant="body1">Email:</Typography>
                             <TextField id="from" name="from" label="Fyll i din email" variant="outlined" fullWidth onChange={handleChange} value={formData.from} />
                         </Item>
                     </Stack>
                     <Item>
-                        <FormLabel sx={{ color: 'black'}}>Meddelande:</FormLabel>
+                        <Typography variant="body1">Meddelande:</Typography>
                         <TextField
                             id="message"
                             name="message"
