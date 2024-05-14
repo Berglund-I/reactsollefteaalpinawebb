@@ -10,11 +10,33 @@ import BeMemeberPage from './pages/BeMemberPage'
 import ContactUsPage from './pages/ContactUsPage'
 import AboutUsPage from "./pages/AboutUsPage";
 import MainNavComponent from "./components/MainNavComponent";
+import { createMuiTheme, ThemeProvider } from '@mui/material/styles';
 
+export const theme: createMuiTheme = {
+    palette: {
+        mode: 'light',
+        primary: {
+            main: '#1f71d0',
+        },
+        secondary: {
+            main: '#044899',
+        },
+        background: {
+            default: '#f5f5f5',
+        },
+        error: {
+            main: '#e30d16',
+        },
+        warning: {
+            main: '#fdcc12',
+        },
+    },
+};
 
 function App() {
     return (
         <Router>
+            <ThemeProvider theme={theme}>
             <HeaderElements />
             <MainNavComponent/>
             <Routes>
@@ -27,6 +49,7 @@ function App() {
                 <Route path="/Kontakta oss" element={<ContactUsPage/>} />
             </Routes>
             <FooterElements/>
+            </ThemeProvider>
         </Router>
     );
 }
