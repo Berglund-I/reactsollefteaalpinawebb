@@ -7,11 +7,8 @@ import { styled } from '@mui/system';
 import CompetitionCalendarComponent from "../components/CompetitionCalendarComponent";
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
-    color: theme.palette.text.secondary,
     flexGrow: 1,
     display: 'flex', 
     flexDirection: 'column',
@@ -25,15 +22,15 @@ function DisplayCompetitionComponent() {
             <Grid item xs={12} sm={6}>
                 <Item>
                     <Typography variant="h2">Tävlingskalendern</Typography>
-                    <Typography>Här kan du se och anmäla dig till kommande tävlingar</Typography>
-                    <Link to="https://ta.skidor.com/EventCalendar.aspx?orgid=80">Klicka här för att gå till Tävlingskalendern</Link>
+                    <Typography variant="body1">Här kan du se och anmäla dig till kommande tävlingar</Typography>
+                    <Link variant="body1" to="https://ta.skidor.com/EventCalendar.aspx?orgid=80">Klicka här för att gå till Tävlingskalendern</Link>
                 </Item>
             </Grid>
 
             <Grid item xs={12} sm={6}>
                 <Item>
                     <Typography variant="h2">Hemmatävlingar</Typography>
-                    <Typography>Här kan du se tävlingar som vi i Sollefteå alpina klubb är med
+                    <Typography variant="body1">Här kan du se tävlingar som vi i Sollefteå alpina klubb är med
                         och arrangera</Typography>
                     <CompetitionCalendarComponent/>
                 </Item>

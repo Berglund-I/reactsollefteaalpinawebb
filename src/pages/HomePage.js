@@ -3,11 +3,12 @@ import FacebookComponent from "../components/FacebookComponent";
 import SidebarComponent from "../components/SidebarComponent";
 import Grid from '@mui/material/Grid';
 import Hidden from '@mui/material/Hidden';
+import Typography from "@mui/material/Typography";
 
 function HomePage(){
     return (
         <div className="App">
-            <h1>Välkommen till Sollefteå alpina</h1>
+            <Typography variant="h1">Välkommen till Sollefteå alpina</Typography>
 
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={9}>

@@ -2,6 +2,28 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import CompetitionCalendarService from "../services/CompetitionCalendarService";
+import TableCell, {tableCellClasses} from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import {styled} from "@mui/material/styles";
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.body}`]: {
+        ...theme.typography.body1,
+    },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+
+    },
+    '&:last-child td, &:last-child th': {
+
+    },
+}));
 
 class CompetitionCalendarComponent extends React.Component {
 
@@ -31,26 +53,26 @@ class CompetitionCalendarComponent extends React.Component {
             <div>
                 {loading ? (
                     <div>
-                        <p>Hämtar tävlingskalender <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}} /> </p>
+                        <Typography variant="body1">Hämtar tävlingskalender <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}} /> </Typography>
 
                     </div>
                 ) : competitionCalendar.length === 0 ? (
-                    <p>Sollefteå alpina är inte med och arrangerar någon tävling för tillfället.</p>
+                    <Typography variant="body1">Sollefteå alpina är inte med och arrangerar någon tävling för tillfället.</Typography>
                 ) : (
-                    <table className="competitionCalendar-table">
-                        <tbody>
-                        {competitionCalendar.map(
-                            competitionCalendar =>
-                                <tr key={competitionCalendar.id}>
-                                    <td>{competitionCalendar.event}</td>
-                                    <td>{competitionCalendar.date}</td>
-                                    <td>
-                                        <button onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan <i className="bi bi-box-arrow-up-right"></i></button>
-                                    </td>
-                                </tr>
-                        )}
-                        </tbody>
-                    </table>
+                    <Table className="competitionCalendar-table">
+                        <TableBody>
+                            {competitionCalendar.map(
+                                competitionCalendar =>
+                                    <StyledTableRow key={competitionCalendar.id}>
+                                        <StyledTableCell>{competitionCalendar.event}</StyledTableCell>
+                                        <StyledTableCell>{competitionCalendar.date}</StyledTableCell>
+                                        <StyledTableCell>
+                                            <Button variant="contained" color="primary" onClick={() => this.handleButtonClick(competitionCalendar.eventID)}>Gå till anmälan<i className="bi bi-box-arrow-up-right"></i></Button>
+                                        </StyledTableCell>
+                                    </StyledTableRow>
+                            )}
+                        </TableBody>
+                    </Table>
                 )}
             </div>
         )
