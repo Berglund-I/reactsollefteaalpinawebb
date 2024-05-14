@@ -39,7 +39,6 @@ class FacebookComponent extends React.Component {
         const { facebook, loading, postsToShow } = this.state;
 
         return (
-            <Grid container spacing={2}>
                 <Grid item xs={12} sm={9}>
                     <div className="fb-container">
                         {loading ? (
@@ -69,37 +68,6 @@ class FacebookComponent extends React.Component {
                         )}
                     </div>
                 </Grid>
-
-                <Grid item xs={0} sm={3}>
-                    <div className="fb-container">
-                        {loading ? (
-                            <p>Hämtar nyheter från facebook <FontAwesomeIcon icon={faSpinner} spin
-                                                                             style={{color: "#003c99"}}/></p>
-                        ) : facebook.length === 0 ? (
-                            <p>Hittade ingen information</p>
-                        ) : (
-                            <>
-                                {facebook.slice(0, postsToShow).map((post, index) => (
-                                    <Card key={post.idFacebook}>
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
-                                                {post.createdTime}
-                                            </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {post.message}
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                ))}
-                                {postsToShow < facebook.length &&
-                                    <Button variant="contained" color="primary" onClick={this.showMorePosts}>Visa fler
-                                        inlägg</Button>
-                                }
-                            </>
-                        )}
-                    </div>
-                </Grid>
-            </Grid>
 
 
         )
