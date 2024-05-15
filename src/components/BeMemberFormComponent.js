@@ -133,14 +133,14 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h2" paddingLeft="25px" paddingTop="20px" gutterBottom>
                 Bli medlem i Sollefteå Alpina klubb:
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" paddingLeft="25px" gutterBottom>
                 Fyll i uppgifterna nedan och betala in medlemsavgift samt eventuell träningsavgift för att bli medlem. Information om inbetalning hittar du här. Var medveten om att genom att skicka detta formulär samtycker du till att dina personuppgifter behandlas enligt Sollefteå Alpinas integritetspolicy.
             </Typography>
             <form onSubmit={handleSubmit}>
-                <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
+                <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap" padding="20px" paddingTop="10px">
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
                             <Typography variant="body1" >Namn:</Typography>
@@ -210,7 +210,7 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
                         />
                     </Item>
                     
-                    <Button variant="contained" color="primary" type="submit">
+                    <Button variant="contained" color="primary" type="submit" sx={{ width: '200px' }}>
                         Skicka
                     </Button>
                 </Stack>
