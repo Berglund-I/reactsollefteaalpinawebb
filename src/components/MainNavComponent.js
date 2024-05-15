@@ -46,17 +46,18 @@ function ResponsiveAppBar() {
                         href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            display: { xs: 'flex'},
+                            flexDirection: 'row',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
+                            justifyContent: 'space-between',
                         }}
                     >
                     </Typography>
 
-                    <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
+                    <Box sx={{ display: {xs: 'block', md: 'none'} }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -64,6 +65,7 @@ function ResponsiveAppBar() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            sx={{ mr: 2 }}
                         >
                             <MenuIcon/>
                         </IconButton>
@@ -87,9 +89,11 @@ function ResponsiveAppBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                                <Link to={`/${page}`} key={page} style={{textDecoration: 'none'}}>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </MenuItem>
+                                </Link>
                             ))}
                         </Menu>
                     </Box>
@@ -103,7 +107,6 @@ function ResponsiveAppBar() {
                             mr: 2,
                             display: {xs: 'flex', md: 'none'},
                             flexGrow: 1,
-                            fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
@@ -112,12 +115,12 @@ function ResponsiveAppBar() {
                     >
                     </Typography>
 
-                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
+                    <Box sx={{ display: {xs: 'none', md: 'flex'}, justifyContent: 'flex-start' }}>
                         {pages.map((page) => (
                             <Link to={`/${page}`} key={page} style={{textDecoration: 'none'}}>
                                 <Button
                                     onClick={handleCloseNavMenu}
-                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                    sx={{my: 2, color: 'white', display: 'block', mr: {xs: 6, sm: 8, md: 12}}}
                                 >
                                     {page}
                                 </Button>
@@ -127,10 +130,17 @@ function ResponsiveAppBar() {
 
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Logga in som ledare">
-                            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                <Typography variant="body1" align="center" sx={{p: 1 }}>Logga in som ledare</Typography>
-                                <Avatar alt="Logga in som ledare"  />
-                            </IconButton>
+                            <Button
+                                onClick={handleOpenUserMenu}
+                                sx={{
+                                    p: 0,
+                                    color: 'white',
+                                    display: { xs: 'none', md: 'flex' },
+                                }}
+                                endIcon={<Avatar alt="Logga in som ledare" />}
+                            >
+                                Logga in som ledare
+                            </Button>
                         </Tooltip>
                         <Menu
                             sx={{ mt: '45px' }}
