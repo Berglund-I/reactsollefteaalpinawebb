@@ -68,14 +68,14 @@ export default function FlexboxGapStack() {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h2" paddingLeft="10px" paddingTop="20px" gutterBottom>
                 Kontakta Sollefteå Alpina!
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" paddingLeft="10px" gutterBottom>
                 Ställ era frågor nedan, vi svarar så fort vi kan.
             </Typography>
             <form onSubmit={handleSubmit}>
-                <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap">
+                <Stack spacing={{ xs: 1, sm: 2 }} direction="column" useFlexGap flexWrap="wrap" padding="20px" paddingLeft="0" paddingTop="10px">
                     <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
                         <Item>
                             <Typography variant="body1">Namn:</Typography>
@@ -100,7 +100,7 @@ export default function FlexboxGapStack() {
                             value={formData.message}
                         />
                     </Item>
-                    <Button variant="contained" color="primary" type="submit">
+                    <Button variant="contained" color="primary" type="submit" sx={{ width: '200px' }}>
                         Skicka
                     </Button>
                 </Stack>
