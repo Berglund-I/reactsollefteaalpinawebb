@@ -50,7 +50,7 @@ function MobileLayout({ rows }) {
     return (
         <Box>
             {rows.map((row) => (
-                <Box key={row.trainingGroup} sx={{ marginBottom: 2, padding: 2 }}>
+                <Box key={row.trainingGroup} sx={{ marginBottom: 2, padding: 2, border: '1px solid grey', borderRadius: '5px', backgroundColor: '#f5f5f5', boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)' }}>
                     <Box>{row.trainingGroup}</Box>
                     <Box>{row.description}</Box>
                     <Box>{row.trainingDays}</Box>
@@ -65,7 +65,7 @@ function TrainingScheduleComponent() {
     return (
         <>
             <Hidden smDown>
-                <TableContainer component={Paper}>
+                <TableContainer component={Paper} sx={{ padding: 2 }}>
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
