@@ -39,7 +39,7 @@ class FacebookComponent extends React.Component {
         const { facebook, loading, postsToShow } = this.state;
 
         return (
-                <Grid item xs={12} sm={9}>
+                <Grid item xs={12} sm={12}>
                     <div className="fb-container">
                         {loading ? (
                             <Typography variant="body1">Hämtar nyheter från facebook <FontAwesomeIcon icon={faSpinner} spin style={{color: "#003c99"}}/></Typography>

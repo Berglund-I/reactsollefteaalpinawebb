@@ -17,7 +17,7 @@ function SidebarComponent(){
 
             <Grid item>
                 <Paper>
-                    <Typography variant="h3" >Följ oss gärna på våra sociala medier:</Typography>
+                    <Typography variant="h2" >Följ oss gärna på våra sociala medier:</Typography>
                     <Link variant="body1" href="https://www.instagram.com/sollefteaalpina/" target="_blank" rel="noopener noreferrer">
                         <i className="bi bi-instagram">Sollefteaalpina</i>
                     </Link>
