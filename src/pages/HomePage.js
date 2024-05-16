@@ -16,7 +16,7 @@ function HomePage(){
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
-                    <Hidden xsDown>
+                    <Hidden only={['xs']}>
                         <SidebarComponent/>
                     </Hidden>
                 </Grid>
