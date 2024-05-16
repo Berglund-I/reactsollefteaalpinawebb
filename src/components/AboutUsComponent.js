@@ -21,7 +21,7 @@ function AboutUsComponent() {
 
             <Grid item xs={12} sm={6} sx={{ marginTop: '10px' }}>
                 <Item>
-                <Typography variant="h2" paddingLeft="10px" paddingTop="20px" gutterBottom>Information om Sollefteå alpina klubb</Typography>
+                <Typography variant="h2" paddingLeft="10px" paddingTop="10px" gutterBottom>Information om Sollefteå alpina klubb</Typography>
                 <Typography variant="body1" paddingLeft="10px" >Sollefteå alpina klubb är en alpin tävlingsklubb som drivs ideellt. Hemmabacken
                     Hallstaberget drivs av Sollefteå kommun.</Typography>
                 </Item>
@@ -29,7 +29,7 @@ function AboutUsComponent() {
 
             <Grid item xs={12} sm={6} sx={{ marginTop: '10px' }}>
                 <Item>
-                <Typography variant="h2" paddingLeft="10px" paddingTop="20px">Styrelsen i klubben</Typography>
+                <Typography variant="h2" paddingLeft="10px" paddingTop="10px">Styrelsen i klubben</Typography>
                 <Typography variant="body1" paddingLeft="10px" >
                     <dl>
                         <dt>Ordförande: Roger Svensson</dt>
@@ -45,9 +45,9 @@ function AboutUsComponent() {
 
             <Grid item xs={12} sx={{ marginTop: '10px' }}>
                 <Item>
-                    <Typography variant="h2" paddingLeft="10px" paddingTop="20px" gutterBottom>Information om att vara medlem</Typography>
+                    <Typography variant="h2" paddingLeft="10px" paddingTop="10px" gutterBottom>Information om att vara medlem</Typography>
                     <Typography variant="body1" paddingLeft="10px">Klicka på knappen för att gå vidare till att bli medlem:</Typography>
-                    <Button sx={{ width: '200px', marginLeft: '10px' }} variant="contained" color="primary" to="/Bli medlem">Bli medlem</Button>
+                    <Button sx={{ width: '200px', marginLeft: '10px', marginTop: '10px', marginBottom: '10px' }} variant="contained" color="primary" to="/Bli medlem">Bli medlem</Button>
                     <Typography variant="body1" paddingLeft="10px">För att vara med i Sollefteås Alpina skidklubb betalar medlemarna en årlig
                         medlemsavgift. Om du dessutom vill vara med om träna ska en träningsavgift också betalas. Mer
                         information om exakta priser finns neda. Kul att du vill vara med, vi ser fram emot att
@@ -70,8 +70,8 @@ function AboutUsComponent() {
                         <li><Typography variant="body1">Bankgiro: 5312-8369</Typography></li>
                     </ul>
                     <Typography variant="body1" paddingLeft="10px">Dessutom måste du fylla i ett formulär som ny medlem, det hittar du på <Link to="/Bli medlem">här</Link>. Om du redan fyllt i formuläret och betalat avgifterna så är du nu medlem i klubben, kul! </Typography>
-                    <Typography variant="body1" paddingLeft="10px">Följ länken nedan för att se dina träningstider så ses vi i backen. Hör gärna av dig om du har frågor så vi kan hjälpa dig. </Typography>
-                    <Link variant="body1" to="/Träning">Se vilken träningsgrupp du tillhör</Link>
+                    <Typography variant="body1" paddingLeft="10px">Tryck på knappen nedan för att se dina träningstider så ses vi i backen. Hör gärna av dig om du har frågor så vi kan hjälpa dig. </Typography>
+                    <Button sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }} variant="contained" color="primary" to="/Träning">Träningstider</Button>
                 </Item>
             </Grid>
         </Grid>
