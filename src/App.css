@@ -1,4 +1,18 @@
- /* Ändrar titelns egenskaper på popupen */
+/* Gör så footern håller sig på plats */
+html, body, #root {
+  height: 100%;
+}
+/* Gör så footern håller sig på plats */
+body, #root {
+  display: flex;
+  flex-direction: column;
+}
+/* Gör så footern håller sig på plats */
+#root > .App {
+  flex-grow: 1;
+}
+
+/* Ändrar titelns egenskaper på popupen */
   .swal2-title {
     font-size: 2.5em;
     font-weight: bold;

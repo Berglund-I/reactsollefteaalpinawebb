@@ -60,7 +60,7 @@ class FacebookComponent extends React.Component {
                                     </Card>
                                 ))}
                                 {postsToShow < facebook.length &&
-                                    <Button variant="contained" color="primary" onClick={this.showMorePosts}>Visa fler
+                                    <Button variant="contained" color="primary" sx={{ width: '200px', margin: '20px' }} onClick={this.showMorePosts}>Visa fler
                                         inlägg</Button>
                                 }
                             </>
