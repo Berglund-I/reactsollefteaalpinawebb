@@ -3,6 +3,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import Typography from "@mui/material/Typography";
+import CompetitionCalendarComponent from "./CompetitionCalendarComponent";
+import FacebookPictureComponent from "./FacebookPictureComponent";
 
 function SidebarComponent(){
     return (
@@ -12,6 +14,12 @@ function SidebarComponent(){
                 <Paper>
                     <Typography variant="h2">Våra samarbetspartners</Typography>
                     <img src="IcaKvantum.jpg" alt="Sponsor 1, Ica kvantum Sollefteå alpina klubb"/>
+                </Paper>
+            </Grid>
+
+            <Grid item>
+                <Paper>
+                    <FacebookPictureComponent/>
                 </Paper>
             </Grid>
 
