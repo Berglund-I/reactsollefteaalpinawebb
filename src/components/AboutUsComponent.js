@@ -47,7 +47,15 @@ function AboutUsComponent() {
                 <Item>
                     <Typography variant="h2" paddingLeft="10px" paddingTop="10px" gutterBottom>Information om att vara medlem</Typography>
                     <Typography variant="body1" paddingLeft="10px">Klicka på knappen för att gå vidare till att bli medlem:</Typography>
-                    <Button sx={{ width: '200px', marginLeft: '10px', marginTop: '10px', marginBottom: '10px' }} variant="contained" color="primary" to="/Bli medlem">Bli medlem</Button>
+                    <Button
+                        component={Link}
+                        to="/Bli%20medlem"
+                        sx={{ width: '200px', marginLeft: '10px', marginTop: '10px', marginBottom: '10px' }}
+                        variant="contained"
+                        color="primary"
+                    >
+                        Bli medlem
+                    </Button>
                     <Typography variant="body1" paddingLeft="10px">För att vara med i Sollefteås Alpina skidklubb betalar medlemarna en årlig
                         medlemsavgift. Om du dessutom vill vara med om träna ska en träningsavgift också betalas. Mer
                         information om exakta priser finns neda. Kul att du vill vara med, vi ser fram emot att
@@ -71,7 +79,15 @@ function AboutUsComponent() {
                     </ul>
                     <Typography variant="body1" paddingLeft="10px">Dessutom måste du fylla i ett formulär som ny medlem, det hittar du på <Link to="/Bli medlem">här</Link>. Om du redan fyllt i formuläret och betalat avgifterna så är du nu medlem i klubben, kul! </Typography>
                     <Typography variant="body1" paddingLeft="10px">Tryck på knappen nedan för att se dina träningstider så ses vi i backen. Hör gärna av dig om du har frågor så vi kan hjälpa dig. </Typography>
-                    <Button sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }} variant="contained" color="primary" to="/Träning">Träningstider</Button>
+                    <Button
+                        component={Link}
+                        to="/Träning"
+                        sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }}
+                        variant="contained"
+                        color="primary"
+                    >
+                        Träningstider
+                    </Button>
                 </Item>
             </Grid>
         </Grid>
