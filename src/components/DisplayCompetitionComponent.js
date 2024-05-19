@@ -24,7 +24,14 @@ function DisplayCompetitionComponent() {
                 <Item>
                     <Typography variant="h2" variant="h2" paddingLeft="15px" paddingTop="10px" gutterBottom>Tävlingskalendern</Typography>
                     <Typography variant="body1" paddingLeft="15px">Här kan du se och anmäla dig till kommande tävlingar</Typography>
-                    <Button sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }} variant="contained" color="primary" to="https://ta.skidor.com/EventCalendar.aspx?orgid=80">Tävlingskalendern</Button>
+                    <Button
+                        sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }}
+                        variant="contained"
+                        color="primary"
+                        onClick={() => window.open('https://ta.skidor.com/EventCalendar.aspx?orgid=80', '_blank')}
+                    >
+                        Tävlingskalendern
+                    </Button>
                 </Item>
             </Grid>
 

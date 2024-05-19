@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 function FooterElements(){
     return (
