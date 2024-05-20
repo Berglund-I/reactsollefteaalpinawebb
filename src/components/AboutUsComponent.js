@@ -22,8 +22,8 @@ function AboutUsComponent() {
             <Grid item xs={12} sm={6} sx={{ marginTop: '10px' }}>
                 <Item>
                 <Typography variant="h2" paddingLeft="10px" paddingTop="10px" gutterBottom>Information om Sollefteå alpina klubb</Typography>
-                <Typography variant="body1" paddingLeft="10px" >Sollefteå alpina klubb är en alpin tävlingsklubb som drivs ideellt. Hemmabacken
-                    Hallstaberget drivs av Sollefteå kommun.</Typography>
+                <Typography variant="body1" paddingLeft="10px" >Sollefteå alpina klubb är en alpin tävlingsklubb som drivs ideellt. Vi vill ge både barn och vuxna möjlighet att utöva alpin skidåkning och tillsammans skapa goda minnen. Det förekommer flera olika aktiviteter i klubbens regi men vi trivs allra bäst i backen. Hemmabacken
+                    Hallstaberget drivs av Sollefteå kommun och mer om den hittar ni <Link to="https://www.solleftea.se/hallsta-ski/hallsta-ski---alpint">här</Link>.</Typography>
                 </Item>
             </Grid>
 
