@@ -49,11 +49,23 @@ function BeMemberFormComponent(){    const [formData, setFormData] = useState({
     const checkInputFormat = (e) => {
         let errors = {...formErrors};
         if (e.target.name === 'personalNumber') {
-            const pattern = /\d{8}-\d{4}/;
-            if (!pattern.test(e.target.value)) {
+            const pattern = /(\d{4})(\d{2})(\d{2})-\d{4}/;
+            const match = e.target.value.match(pattern);
+            if (!match) {
                 errors[e.target.name] = 'Invalid personal number';
             } else {
-                delete errors[e.target.name];
+                const year = parseInt(match[1], 10);
+                const month = parseInt(match[2], 10) - 1; // months are 0-indexed in JavaScript
+                const day = parseInt(match[3], 10);
+                const date = new Date(year, month, day);
+                const now = new Date();
+                if (date.getFullYear() !== year || date.getMonth() !== month || date.getDate() !== day) {
+                    errors[e.target.name] = 'Invalid date in personal number';
+                } else if (date > now) {
+                    errors[e.target.name] = 'Date in personal number cannot be in the future';
+                } else {
+                    delete errors[e.target.name];
+                }
             }
         } else if (e.target.name === 'name' || e.target.name === 'parentName') {
             if (e.target.value.trim() === '') {
