@@ -23,7 +23,7 @@ function DisplayCompetitionComponent() {
             <Grid item xs={12} sm={6} sx={{ marginTop: '10px' }}>
                 <Item>
                     <Typography variant="h2" variant="h2" paddingLeft="15px" paddingTop="10px" gutterBottom>Tävlingskalendern</Typography>
-                    <Typography variant="body1" paddingLeft="15px">Här kan du se och anmäla dig till kommande tävlingar</Typography>
+                    <Typography variant="body1" paddingLeft="15px">I tävlingskalendern publiceras alla alpintävlingar. Du kan anmäla dig, se vilka andra som är anmälda och ta del av resultat från tävlingarna. Om du är intresserad av att tävla och är medlem i Sollefteå alpina kan du gå till tävlingskalendern och anmäla dig till den tävling du vill delta i. Prata med ansvarig tränare för din grupp om du har några frågor. Här hittar du tävlingskalendern:</Typography>
                     <Button
                         sx={{ width: '200px', marginLeft: '10px', marginTop: '10px' }}
                         variant="contained"
