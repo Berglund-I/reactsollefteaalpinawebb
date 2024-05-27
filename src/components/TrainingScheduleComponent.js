@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Hidden from '@mui/material/Hidden';
 import Box from '@mui/material/Box';
+import StrapiAdminService from "../services/StrapiAdminService";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -39,15 +41,6 @@ function createData(
     return { trainingGroup, description, trainingPlace, trainingDays, trainingTimes, trainer};
 }
 
-const rows = [
-    createData('Nybörjargruppen', 'För åkaren som är ny till skidåkning', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-    createData('U10', 'För åkaren som är 0-10 år gammal', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-    createData('U12', 'För åkaren som är 11-12 år gammal', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-    createData('U14', 'För åkaren som är 13-14 år gammal', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-    createData('U16', 'För åkaren som är 15-16 år gammal', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-    createData('FIS', 'För åkaren som är 17 år gammal och äldre', 'Hallstabacken', 'Måndagar, tisdagar och torsdagar', 'kl 18-20:30', 'Eva Exempelsson'),
-];
-
 function MobileLayout({ rows }) {
     return (
         <Box>
@@ -66,6 +59,24 @@ function MobileLayout({ rows }) {
 }
 
 function TrainingScheduleComponent() {
+    const [rows, setRows] = useState([]);
+
+    useEffect(() => {
+        StrapiAdminService.getInformationAboutTrainingSchedule()
+            .then(response => {
+                const data = response.data;
+                const newRows = data.map(item => createData(
+                    item.trainingGroup,
+                    item.description,
+                    item.trainingPlace,
+                    item.trainingDays,
+                    item.trainingTimes,
+                    item.trainer
+                ));
+                setRows(newRows);
+            })
+            .catch(error => console.error('Error:', error));
+    }, []);
     return (
         <>
             <Hidden smDown>
