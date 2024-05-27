@@ -29,6 +29,9 @@ class StrapiAdminService {
     getSponsorPhoto() {
         return this.api.get('/sponsors');
     }
+    getQuestion() {
+        return this.api.get('/questions');
+    }
 
 
 
