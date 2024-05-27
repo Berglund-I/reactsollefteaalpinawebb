@@ -54,11 +54,6 @@ function AboutUsComponent() {
             });
     }, []);
 
-    console.log(trainingPrice); // Check the fetched data
-
-    if (!trainingPrice) {
-        return <div>Loading...</div>; // Show a loading message if the data is not available
-    }
     return (
         <Grid container spacing={3} >
 
