@@ -54,6 +54,11 @@ function AboutUsComponent() {
             });
     }, []);
 
+    console.log(trainingPrice); // Check the fetched data
+
+    if (!trainingPrice) {
+        return <div>Loading...</div>; // Show a loading message if the data is not available
+    }
     return (
         <Grid container spacing={3} >
 
@@ -98,15 +103,19 @@ function AboutUsComponent() {
                     </Button>
                     <Typography variant="h3" paddingLeft="10px" paddingTop="10px" gutterBottom>Medlemsavgifter:</Typography>
                     <Typography variant="body1" paddingLeft="10px">
-                        {membershipPrice.map((info, index) => (
-                            <p key={index}>{info.member}: {info.price}</p>
-                        ))}
+                        <dl>
+                            {membershipPrice.map((info, index) => (
+                                <dt key={index}>{info.member}: {info.price}</dt>
+                            ))}
+                        </dl>
                     </Typography>
                     <Typography variant="h3" paddingLeft="10px" paddingTop="10px" gutterBottom>Träningsavgifter:</Typography>
                     <Typography variant="body1" paddingLeft="10px">
-                        {trainingPrice.map((info, index) => (
-                            <p key={index}>{info.trainingGroup}: {info.price}</p>
-                        ))}
+                        <dl>
+                            {trainingPrice.map((info, index) => (
+                                <dt key={index}>{info.trainingGroup}: {info.price}</dt>
+                            ))}
+                        </dl>
                     </Typography>
                     <Typography variant="body1" paddingLeft="10px">Dessutom måste du fylla i ett formulär som ny medlem, det hittar du på <Link to="/Bli medlem">här</Link>. Om du redan fyllt i formuläret och betalat avgifterna så är du nu medlem i klubben, kul! </Typography>
                     <Typography variant="body1" paddingLeft="10px">Tryck på knappen nedan för att se dina träningstider så ses vi i backen. Hör gärna av dig om du har frågor så vi kan hjälpa dig. </Typography>
